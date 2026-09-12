@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sibered — Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="logo-row"><img src="logo.png" alt="Sibered"><span class="wordmark">Sibered</span></div>
+    <nav class="nav">
+      <a href="index.html"><span class="icon">⌂</span><span class="label">Home</span></a>
+      <a href="websites.html"><span class="icon">🌐</span><span class="label">My websites</span></a>
+      <a href="add-website.html"><span class="icon">+</span><span class="label">New scan</span></a>
+      <a href="reports.html" class="active"><span class="icon">▤</span><span class="label">Reports</span></a>
+      <a href="billing.html"><span class="icon">$</span><span class="label">Usage and billing</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <a href="settings.html" class="account-link"><div class="avatar">U</div><span class="label">Account and settings</span></a>
+      <button class="collapse-btn" id="collapseBtn"><span>‹</span><span class="label">Collapse</span></button>
+    </div>
+  </aside>
+
+  <main class="main" style="max-width:680px;">
+    <h1 style="margin-bottom:20px;">Scan report — acmeshop.com</h1>
+
+    <div style="display:flex; gap:16px; margin-bottom:16px;">
+      <div class="card" style="width:150px;">
+        <div class="stat-label">Risk score</div>
+        <div class="stat-value danger">72/100</div>
+      </div>
+      <div class="card" style="flex:1; display:flex; align-items:center; font-size:13px; color:rgba(255,255,255,0.7);">
+        Your login page and one API route are exposed to common attacks. Fixing the two critical issues below would drop your risk to low.
+      </div>
+    </div>
+
+    <div style="display:flex; gap:8px; margin-bottom:16px;">
+      <span class="badge high">2 critical</span>
+      <span class="badge medium">3 medium</span>
+      <span class="badge low">2 low</span>
+    </div>
+
+    <div class="card" style="margin-bottom:12px;">
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+        <span class="badge high">Critical</span>
+        <span style="font-weight:500; font-size:14px;">SQL injection in /login</span>
+      </div>
+      <p style="font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:8px;">
+        An attacker could bypass your login form and access user data directly through the database.
+      </p>
+      <p style="font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:12px;">
+        Fix: sanitize and parameterize the query on the login endpoint instead of concatenating raw input.
+      </p>
+      <div class="code-box" style="color:rgba(255,255,255,0.3);">
+        <span>SELECT * FROM users WHERE •••••••</span>
+        <span style="color:var(--turquoise); font-family:'Poppins',sans-serif;">🔒 Unlock exact code</span>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:10px;">
+      <button class="btn-primary">⭳ Export PDF</button>
+      <button class="btn-locked">🔒 Export JSON</button>
+    </div>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

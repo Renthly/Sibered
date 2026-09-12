@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sibered — Verify ownership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="logo-row"><img src="logo.png" alt="Sibered"><span class="wordmark">Sibered</span></div>
+    <nav class="nav">
+      <a href="index.html"><span class="icon">⌂</span><span class="label">Home</span></a>
+      <a href="websites.html"><span class="icon">🌐</span><span class="label">My websites</span></a>
+      <a href="add-website.html" class="active"><span class="icon">+</span><span class="label">New scan</span></a>
+      <a href="reports.html"><span class="icon">▤</span><span class="label">Reports</span></a>
+      <a href="billing.html"><span class="icon">$</span><span class="label">Usage and billing</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <a href="settings.html" class="account-link"><div class="avatar">U</div><span class="label">Account and settings</span></a>
+      <button class="collapse-btn" id="collapseBtn"><span>‹</span><span class="label">Collapse</span></button>
+    </div>
+  </aside>
+
+  <main class="main" style="max-width:480px;">
+    <h1>Verify ownership</h1>
+    <p class="subtitle">acmeshop.com &middot; choose one method</p>
+
+    <div class="card">
+      <div class="tabs">
+        <button class="tab active" data-method="meta">Meta tag</button>
+        <button class="tab" data-method="html">HTML file</button>
+        <button class="tab" data-method="dns">DNS record</button>
+      </div>
+
+      <p style="font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:8px;">Add this to your site:</p>
+      <div class="code-box">
+        <span id="codeText">&lt;meta name="sibered-verify" content="vs_8f2a...c91"&gt;</span>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:6px; font-size:12px; color:#fde047; margin-bottom:20px;">
+        ⏱ Token expires in 24 hours
+      </div>
+
+      <button class="btn-primary" id="verifyBtn" style="width:100%; justify-content:center;">
+        ⟳ Verify now
+      </button>
+    </div>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

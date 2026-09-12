@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sibered — Add website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="logo-row"><img src="logo.png" alt="Sibered"><span class="wordmark">Sibered</span></div>
+    <nav class="nav">
+      <a href="index.html"><span class="icon">⌂</span><span class="label">Home</span></a>
+      <a href="websites.html"><span class="icon">🌐</span><span class="label">My websites</span></a>
+      <a href="add-website.html" class="active"><span class="icon">+</span><span class="label">New scan</span></a>
+      <a href="reports.html"><span class="icon">▤</span><span class="label">Reports</span></a>
+      <a href="billing.html"><span class="icon">$</span><span class="label">Usage and billing</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <a href="settings.html" class="account-link"><div class="avatar">U</div><span class="label">Account and settings</span></a>
+      <button class="collapse-btn" id="collapseBtn"><span>‹</span><span class="label">Collapse</span></button>
+    </div>
+  </aside>
+
+  <main class="main" style="max-width:480px;">
+    <h1>Add a website</h1>
+    <p class="subtitle">We'll ask you to prove ownership before scanning starts.</p>
+
+    <form class="card" id="addWebsiteForm">
+      <label>Website URL</label>
+      <input type="text" id="urlInput" placeholder="https://yourapp.com">
+
+      <label>What should we scan</label>
+      <select>
+        <option>Whole site</option>
+        <option>Specific pages</option>
+        <option>API endpoints (Pro)</option>
+      </select>
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="agreeCheckbox" style="margin-top:2px;">
+        I own or am authorized to test this website for security vulnerabilities.
+      </label>
+
+      <p class="error-text" id="errorText" style="display:none;"></p>
+
+      <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+        Continue to verification →
+      </button>
+    </form>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

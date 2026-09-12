@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sibered — Scan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="logo-row"><img src="logo.png" alt="Sibered"><span class="wordmark">Sibered</span></div>
+    <nav class="nav">
+      <a href="index.html"><span class="icon">⌂</span><span class="label">Home</span></a>
+      <a href="websites.html"><span class="icon">🌐</span><span class="label">My websites</span></a>
+      <a href="add-website.html" class="active"><span class="icon">+</span><span class="label">New scan</span></a>
+      <a href="reports.html"><span class="icon">▤</span><span class="label">Reports</span></a>
+      <a href="billing.html"><span class="icon">$</span><span class="label">Usage and billing</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <a href="settings.html" class="account-link"><div class="avatar">U</div><span class="label">Account and settings</span></a>
+      <button class="collapse-btn" id="collapseBtn"><span>‹</span><span class="label">Collapse</span></button>
+    </div>
+  </aside>
+
+  <main class="main" style="max-width:480px;">
+    <div id="configView">
+      <h1>Configure scan</h1>
+      <p class="subtitle">acmeshop.com &middot; verified ✓</p>
+
+      <div class="card">
+        <p style="font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:10px;">Scan depth</p>
+        <div class="depth-options">
+          <button class="depth-btn selected">Surface<div class="depth-time">~2 min</div></button>
+          <button class="depth-btn">Standard<div class="depth-time">~6 min</div></button>
+          <button class="depth-btn locked" disabled>Deep 🔒<div class="depth-time">Pro only</div></button>
+        </div>
+
+        <div class="locked-row">API endpoint scanning 🔒</div>
+        <div class="locked-row" style="margin-bottom:20px;">CI/CD webhook trigger 🔒</div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:13px; color:rgba(255,255,255,0.6);">4 of 6 scans left this month</span>
+          <button class="btn-primary" id="startScanBtn">▶ Start scan</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="progressView" class="card" style="display:none; text-align:center;">
+      <h2 style="font-size:18px; margin-bottom:4px;">Scanning acmeshop.com</h2>
+      <p style="font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:24px;">
+        Usually takes 2–8 minutes. We'll email you when it's done.
+      </p>
+      <div class="steps-row">
+        <div class="step"><div class="step-circle">1</div><div class="step-label">Queued</div></div>
+        <div class="step"><div class="step-circle">2</div><div class="step-label">Verified</div></div>
+        <div class="step"><div class="step-circle">3</div><div class="step-label">Scanning</div></div>
+        <div class="step"><div class="step-circle">4</div><div class="step-label">AI analysis</div></div>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%;"></div></div>
+    </div>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

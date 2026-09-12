@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sibered — Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="logo-row"><img src="logo.png" alt="Sibered"><span class="wordmark">Sibered</span></div>
+    <nav class="nav">
+      <a href="index.html" class="active"><span class="icon">⌂</span><span class="label">Home</span></a>
+      <a href="websites.html"><span class="icon">🌐</span><span class="label">My websites</span></a>
+      <a href="add-website.html"><span class="icon">+</span><span class="label">New scan</span></a>
+      <a href="reports.html"><span class="icon">▤</span><span class="label">Reports</span></a>
+      <a href="billing.html"><span class="icon">$</span><span class="label">Usage and billing</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <a href="settings.html" class="account-link"><div class="avatar">U</div><span class="label">Account and settings</span></a>
+      <button class="collapse-btn" id="collapseBtn"><span>‹</span><span class="label">Collapse</span></button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <h1>Welcome back</h1>
+    <p class="subtitle">Here's where things stand across your sites.</p>
+
+    <div class="grid-3" style="margin-bottom:36px;">
+      <div class="card"><div class="stat-label">Websites tracked</div><div class="stat-value">3</div></div>
+      <div class="card"><div class="stat-label">Scans left</div><div class="stat-value">4 / 6</div></div>
+      <div class="card"><div class="stat-label">Open issues</div><div class="stat-value danger">7</div></div>
+    </div>
+
+    <h2 style="font-size:20px; margin-bottom:12px;">Recent activity</h2>
+    <div class="card list-row" style="margin-bottom:10px;">
+      <span style="font-size:13px;">acmeshop.com — scan completed, 4 high-risk issues</span>
+      <span style="font-size:12px; color:rgba(255,255,255,0.4);">3d ago</span>
+    </div>
+    <div class="card list-row">
+      <span style="font-size:13px;">myfounderapp.io — verification succeeded</span>
+      <span style="font-size:12px; color:rgba(255,255,255,0.4);">5d ago</span>
+    </div>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

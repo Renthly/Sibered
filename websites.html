@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sibered — My websites</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="logo-row"><img src="logo.png" alt="Sibered"><span class="wordmark">Sibered</span></div>
+    <nav class="nav">
+      <a href="index.html"><span class="icon">⌂</span><span class="label">Home</span></a>
+      <a href="websites.html" class="active"><span class="icon">🌐</span><span class="label">My websites</span></a>
+      <a href="add-website.html"><span class="icon">+</span><span class="label">New scan</span></a>
+      <a href="reports.html"><span class="icon">▤</span><span class="label">Reports</span></a>
+      <a href="billing.html"><span class="icon">$</span><span class="label">Usage and billing</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <a href="settings.html" class="account-link"><div class="avatar">U</div><span class="label">Account and settings</span></a>
+      <button class="collapse-btn" id="collapseBtn"><span>‹</span><span class="label">Collapse</span></button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+      <div>
+        <h1>My websites</h1>
+        <p class="subtitle" style="margin-bottom:0;">4 of 6 scans left this month</p>
+      </div>
+      <a href="add-website.html" class="btn-primary">+ Add website</a>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span style="font-weight:500;">acmeshop.com</span>
+          <span class="badge high">Risk: high</span>
+        </div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.5); margin-bottom:10px;">Last scanned 3 days ago</div>
+        <div style="font-size:12px; color:var(--turquoise);">✓ Verified</div>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span style="font-weight:500;">myfounderapp.io</span>
+          <span class="badge low">Risk: low</span>
+        </div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.5); margin-bottom:10px;">Scan running</div>
+        <div style="font-size:12px; color:var(--lime);">⟳ Scanning...</div>
+      </div>
+      <div class="card">
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span style="font-weight:500;">sidehustle.dev</span>
+          <span class="badge unverified">Unverified</span>
+        </div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.5); margin-bottom:10px;">Added, not scanned yet</div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.4);">Pending verification</div>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

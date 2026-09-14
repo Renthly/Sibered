@@ -13,47 +13,53 @@
   <aside class="sidebar" id="sidebar">
     <div class="logo-row"><img src="logo.png" alt="Sibered"><span class="wordmark">Sibered</span></div>
     <nav class="nav">
-      <a href="index.html"><span class="icon">⌂</span><span class="label">Home</span></a>
-      <a href="websites.html"><span class="icon">🌐</span><span class="label">My websites</span></a>
-      <a href="add-website.html"><span class="icon">+</span><span class="label">New scan</span></a>
-      <a href="reports.html"><span class="icon">▤</span><span class="label">Reports</span></a>
-      <a href="billing.html" class="active"><span class="icon">$</span><span class="label">Usage and billing</span></a>
+      <a href="index.html"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg></span><span class="label">Home</span></a>
+      <a href="websites.html"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 4 6 4 9s-1.5 6.5-4 9c-2.5-2.5-4-6-4-9s1.5-6.5 4-9z"/></svg></span><span class="label">My websites</span></a>
+      <a href="add-website.html"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span><span class="label">New scan</span></a>
+      <a href="reports.html"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v3h3"/><path d="M9 12h6M9 16h6"/></svg></span><span class="label">Reports</span></a>
+      <a href="billing.html" class="active"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 9h.01M18 15h.01"/></svg></span><span class="label">Usage and billing</span></a>
     </nav>
     <div class="sidebar-bottom">
       <a href="settings.html" class="account-link"><div class="avatar">U</div><span class="label">Account and settings</span></a>
-      <button class="collapse-btn" id="collapseBtn"><span>‹</span><span class="label">Collapse</span></button>
+      <button class="collapse-btn" id="collapseBtn"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></span><span class="label">Collapse</span></button>
     </div>
   </aside>
-
-  <main class="main" style="max-width:680px;">
+  <main class="main">
     <h1 style="margin-bottom:20px;">Usage and billing</h1>
 
     <div class="card" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:32px;">
       <div>
         <div class="stat-label">Current plan</div>
-        <div style="font-size:17px; font-weight:500;">Starter &middot; $5.99/mo</div>
-        <div style="font-size:12px; color:rgba(255,255,255,0.4); margin-top:2px;">Renews Oct 8 &middot; 4 of 6 scans used</div>
+        <div style="font-size:18px; font-weight:600;">Starter &middot; $5.99/mo</div>
+        <div style="font-size:12px; color:var(--faint); margin-top:2px;">Renews Oct 8 &middot; 4 of 6 scans used</div>
       </div>
-      <button class="btn-primary">⚡ Emergency scan &middot; $1.99</button>
+      <button class="btn-primary"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></span>Emergency scan &middot; $1.99</button>
     </div>
 
-    <h2 style="font-size:18px; margin-bottom:12px;">Plans</h2>
+    <h2 style="font-size:19px; margin-bottom:14px;">Plans</h2>
     <div class="grid-3">
       <div class="card">
         <div style="font-size:13px; font-weight:500;">Starter</div>
-        <div style="font-size:22px; font-weight:600; margin:4px 0;">$5.99</div>
-        <div style="font-size:12px; color:rgba(255,255,255,0.5);">6 scans / mo</div>
+        <div style="font-size:24px; font-weight:600; margin:5px 0;">$5.99</div>
+        <div style="font-size:12px; color:var(--muted); margin-bottom:10px;">6 scans / mo</div>
+        <div class="plan-feature"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Full remediation steps</div>
+        <div class="plan-feature"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>PDF export</div>
       </div>
       <div class="card plan-card popular">
         <span class="popular-tag">Most popular</span>
-        <div style="font-size:13px; font-weight:500; margin-top:4px;">Pro</div>
-        <div style="font-size:22px; font-weight:600; margin:4px 0;">$13.99</div>
-        <div style="font-size:12px; color:rgba(255,255,255,0.5);">14 scans / mo</div>
+        <div style="font-size:13px; font-weight:500; margin-top:6px;">Pro</div>
+        <div style="font-size:24px; font-weight:600; margin:5px 0;">$13.99</div>
+        <div style="font-size:12px; color:var(--muted); margin-bottom:10px;">14 scans / mo</div>
+        <div class="plan-feature"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>API scanning</div>
+        <div class="plan-feature"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>CI/CD webhook</div>
+        <div class="plan-feature"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Priority queue</div>
       </div>
       <div class="card">
         <div style="font-size:13px; font-weight:500;">Team</div>
-        <div style="font-size:22px; font-weight:600; margin:4px 0;">$29.99</div>
-        <div style="font-size:12px; color:rgba(255,255,255,0.5);">30 scans / mo</div>
+        <div style="font-size:24px; font-weight:600; margin:5px 0;">$29.99</div>
+        <div style="font-size:12px; color:var(--muted); margin-bottom:10px;">30 scans / mo</div>
+        <div class="plan-feature"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>3 team members</div>
+        <div class="plan-feature"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>White-label reports</div>
       </div>
     </div>
   </main>

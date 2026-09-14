@@ -13,27 +13,26 @@
   <aside class="sidebar" id="sidebar">
     <div class="logo-row"><img src="logo.png" alt="Sibered"><span class="wordmark">Sibered</span></div>
     <nav class="nav">
-      <a href="index.html"><span class="icon">⌂</span><span class="label">Home</span></a>
-      <a href="websites.html"><span class="icon">🌐</span><span class="label">My websites</span></a>
-      <a href="add-website.html"><span class="icon">+</span><span class="label">New scan</span></a>
-      <a href="reports.html" class="active"><span class="icon">▤</span><span class="label">Reports</span></a>
-      <a href="billing.html"><span class="icon">$</span><span class="label">Usage and billing</span></a>
+      <a href="index.html"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg></span><span class="label">Home</span></a>
+      <a href="websites.html"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 4 6 4 9s-1.5 6.5-4 9c-2.5-2.5-4-6-4-9s1.5-6.5 4-9z"/></svg></span><span class="label">My websites</span></a>
+      <a href="add-website.html"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span><span class="label">New scan</span></a>
+      <a href="reports.html" class="active"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v3h3"/><path d="M9 12h6M9 16h6"/></svg></span><span class="label">Reports</span></a>
+      <a href="billing.html"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 9h.01M18 15h.01"/></svg></span><span class="label">Usage and billing</span></a>
     </nav>
     <div class="sidebar-bottom">
       <a href="settings.html" class="account-link"><div class="avatar">U</div><span class="label">Account and settings</span></a>
-      <button class="collapse-btn" id="collapseBtn"><span>‹</span><span class="label">Collapse</span></button>
+      <button class="collapse-btn" id="collapseBtn"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></span><span class="label">Collapse</span></button>
     </div>
   </aside>
-
-  <main class="main" style="max-width:680px;">
+  <main class="main">
     <h1 style="margin-bottom:20px;">Scan report — acmeshop.com</h1>
 
     <div style="display:flex; gap:16px; margin-bottom:16px;">
-      <div class="card" style="width:150px;">
+      <div class="card" style="width:160px;">
         <div class="stat-label">Risk score</div>
         <div class="stat-value danger">72/100</div>
       </div>
-      <div class="card" style="flex:1; display:flex; align-items:center; font-size:13px; color:rgba(255,255,255,0.7);">
+      <div class="card" style="flex:1; display:flex; align-items:center; font-size:13px; color:var(--muted);">
         Your login page and one API route are exposed to common attacks. Fixing the two critical issues below would drop your risk to low.
       </div>
     </div>
@@ -49,21 +48,23 @@
         <span class="badge high">Critical</span>
         <span style="font-weight:500; font-size:14px;">SQL injection in /login</span>
       </div>
-      <p style="font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:8px;">
+      <p style="font-size:13px; color:var(--muted); margin-bottom:8px;">
         An attacker could bypass your login form and access user data directly through the database.
       </p>
-      <p style="font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:12px;">
+      <p style="font-size:13px; color:var(--muted); margin-bottom:12px;">
         Fix: sanitize and parameterize the query on the login endpoint instead of concatenating raw input.
       </p>
-      <div class="code-box" style="color:rgba(255,255,255,0.3);">
+      <div class="code-box" style="color:var(--faint);">
         <span>SELECT * FROM users WHERE •••••••</span>
-        <span style="color:var(--turquoise); font-family:'Poppins',sans-serif;">🔒 Unlock exact code</span>
+        <span style="display:flex; align-items:center; gap:5px; color:var(--turquoise); font-family:'Poppins',sans-serif; flex-shrink:0;">
+          <span class="icon" style="width:13px;height:13px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></span>Unlock exact code
+        </span>
       </div>
     </div>
 
     <div style="display:flex; gap:10px;">
-      <button class="btn-primary">⭳ Export PDF</button>
-      <button class="btn-locked">🔒 Export JSON</button>
+      <button class="btn-primary"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg></span>Export PDF</button>
+      <button class="btn-locked"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></span>Export JSON</button>
     </div>
   </main>
 </div>

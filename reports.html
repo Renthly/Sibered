@@ -13,33 +13,39 @@
   <aside class="sidebar" id="sidebar">
     <div class="logo-row"><img src="logo.png" alt="Sibered"><span class="wordmark">Sibered</span></div>
     <nav class="nav">
-      <a href="index.html"><span class="icon">⌂</span><span class="label">Home</span></a>
-      <a href="websites.html"><span class="icon">🌐</span><span class="label">My websites</span></a>
-      <a href="add-website.html"><span class="icon">+</span><span class="label">New scan</span></a>
-      <a href="reports.html" class="active"><span class="icon">▤</span><span class="label">Reports</span></a>
-      <a href="billing.html"><span class="icon">$</span><span class="label">Usage and billing</span></a>
+      <a href="index.html"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg></span><span class="label">Home</span></a>
+      <a href="websites.html"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 4 6 4 9s-1.5 6.5-4 9c-2.5-2.5-4-6-4-9s1.5-6.5 4-9z"/></svg></span><span class="label">My websites</span></a>
+      <a href="add-website.html"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span><span class="label">New scan</span></a>
+      <a href="reports.html" class="active"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v3h3"/><path d="M9 12h6M9 16h6"/></svg></span><span class="label">Reports</span></a>
+      <a href="billing.html"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 9h.01M18 15h.01"/></svg></span><span class="label">Usage and billing</span></a>
     </nav>
     <div class="sidebar-bottom">
       <a href="settings.html" class="account-link"><div class="avatar">U</div><span class="label">Account and settings</span></a>
-      <button class="collapse-btn" id="collapseBtn"><span>‹</span><span class="label">Collapse</span></button>
+      <button class="collapse-btn" id="collapseBtn"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></span><span class="label">Collapse</span></button>
     </div>
   </aside>
-
-  <main class="main" style="max-width:680px;">
-    <h1 style="margin-bottom:20px;">Reports</h1>
+  <main class="main">
+    <h1 style="margin-bottom:6px;">Reports</h1>
+    <p class="subtitle">Every completed scan, with its risk score at a glance.</p>
     <a href="report.html" class="card list-row" style="margin-bottom:10px;">
-      <div>
-        <div style="font-weight:500; font-size:14px;">acmeshop.com</div>
-        <div style="font-size:12px; color:rgba(255,255,255,0.4);">Sep 9, 2026</div>
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z"/></svg></span>
+        <div>
+          <div style="font-weight:500; font-size:14px;">acmeshop.com</div>
+          <div style="font-size:12px; color:var(--faint);">Sep 9, 2026</div>
+        </div>
       </div>
-      <span style="color:var(--turquoise); font-size:14px;">72/100</span>
+      <span class="badge high">72/100</span>
     </a>
     <a href="report.html" class="card list-row">
-      <div>
-        <div style="font-weight:500; font-size:14px;">myfounderapp.io</div>
-        <div style="font-size:12px; color:rgba(255,255,255,0.4);">Sep 7, 2026</div>
+      <div style="display:flex; align-items:center; gap:14px;">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z"/></svg></span>
+        <div>
+          <div style="font-weight:500; font-size:14px;">myfounderapp.io</div>
+          <div style="font-size:12px; color:var(--faint);">Sep 7, 2026</div>
+        </div>
       </div>
-      <span style="color:var(--turquoise); font-size:14px;">28/100</span>
+      <span class="badge low">28/100</span>
     </a>
   </main>
 </div>

@@ -128,52 +128,80 @@ function initAddWebsite() {
 }
 // Scan depth selection
 function initScanConfig() {
-  const depthBtns = document.querySelectorAll('.depth-btn:not(.locked)');
-  depthBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      depthBtns.forEach((b) => b.classList.remove('selected'));
-      btn.classList.add('selected');
-    });
-  });
-
   const startBtn = document.getElementById('startScanBtn');
   const configView = document.getElementById('configView');
   const progressView = document.getElementById('progressView');
   if (!startBtn) return;
 
-  startBtn.addEventListener('click', () => {
+  startBtn.addEventListener('click', async () => {
+    const targetId = localStorage.getItem('sibered_target_id');
+    if (!targetId) {
+      alert('No website found — please add a website first.');
+      window.location.href = 'add-website.html';
+      return;
+    }
+
+    startBtn.disabled = true;
+    startBtn.textContent = 'Starting...';
+
+    const { data, error } = await sb.functions.invoke('start-scan', {
+      body: { target_id: targetId },
+    });
+
+    if (error || !data?.scan_job_id) {
+      alert('Could not start scan: ' + (data?.error || error?.message || 'unknown error'));
+      startBtn.disabled = false;
+      startBtn.textContent = 'Start scan';
+      return;
+    }
+
     configView.style.display = 'none';
     progressView.style.display = 'block';
-    runScanAnimation();
+    pollScanStatus(data.scan_job_id);
   });
 }
 
-function runScanAnimation() {
+function pollScanStatus(scanJobId) {
   const steps = document.querySelectorAll('.step-circle');
   const labels = document.querySelectorAll('.step-label');
   const fill = document.getElementById('progressFill');
-  let current = 0;
 
-  function advance() {
-    if (current > 0) {
-      steps[current - 1].classList.remove('active');
-      steps[current - 1].classList.add('done');
-      steps[current - 1].textContent = '✓';
+  // Move to "verified" + "scanning" stage visually right away
+  steps[0].classList.add('done'); steps[0].textContent = '✓';
+  labels[0].classList.add('on');
+  steps[1].classList.add('done'); steps[1].textContent = '✓';
+  labels[1].classList.add('on');
+  steps[2].classList.add('active');
+  labels[2].classList.add('on');
+  fill.style.width = '60%';
+
+  const interval = setInterval(async () => {
+    const { data: job, error } = await sb
+      .from('scan_jobs')
+      .select('*')
+      .eq('id', scanJobId)
+      .single();
+
+    if (error || !job) return;
+
+    if (job.status === 'completed') {
+      clearInterval(interval);
+      steps[2].classList.remove('active'); steps[2].classList.add('done'); steps[2].textContent = '✓';
+      steps[3].classList.add('active');
+      labels[3].classList.add('on');
+      fill.style.width = '100%';
+
+      localStorage.setItem('sibered_scan_results', JSON.stringify(job.results || []));
+      setTimeout(() => { window.location.href = 'report.html'; }, 900);
+    } else if (job.status === 'failed') {
+      clearInterval(interval);
+      alert('Scan failed. Please try again.');
+      window.location.href = 'websites.html';
     }
-    if (current < steps.length) {
-      steps[current].classList.add('active');
-      labels[current].classList.add('on');
-      fill.style.width = ((current + 1) / steps.length) * 100 + '%';
-      current++;
-      if (current < steps.length) {
-        setTimeout(advance, 900);
-      } else {
-        setTimeout(() => { window.location.href = 'report.html'; }, 900);
-      }
-    }
-  }
-  advance();
+    // agar 'queued' ya 'running' hai, toh dobara check karega 4 second baad
+  }, 4000);
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
   initSidebar();
